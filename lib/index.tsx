@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
+import Icon from './icon';
 
-ReactDOM.render(<Button></Button>, document.body);
+ReactDOM.render(
+<div>
+    <Icon name='wechat' />
+    <Icon name='alipay' />
+    <Icon name='qq' />
+</div>, document.querySelector('#root'));
