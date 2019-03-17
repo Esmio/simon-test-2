@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './importIcons';
 import './icon.scss';
 import classes from '../helpers/classes';
