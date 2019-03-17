@@ -1066,7 +1066,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.8":
+"@types/react@*", "@types/react@^16.8.7":
   version "16.8.8"
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
   integrity sha1-S2Ckaf0kafeqbqoPjPvFH2125mI=
