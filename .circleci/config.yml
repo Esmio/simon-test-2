@@ -48,7 +48,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: .
+          at: .
       - run: npm publish
 
 workflows:
