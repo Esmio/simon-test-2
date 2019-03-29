@@ -1,8 +1,10 @@
 {
   "name": "sui888",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
   "scripts": {
