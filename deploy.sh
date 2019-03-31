@@ -1,1 +1,1 @@
-npm version $1 && git push --tags
+npm version $1 && git push
