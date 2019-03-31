@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-npm version $1 && git push --follow-tags
+npm version $1 && \
+git push --follow-tags
