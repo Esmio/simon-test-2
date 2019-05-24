@@ -1,5 +1,6 @@
 /dist/*
 .DS_Store
+lib/.DS_Store
 /test-results/
 # Logs
 logs
