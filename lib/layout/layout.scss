@@ -1,0 +1,20 @@
+@import '../helper';
+.sui-layout {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    &.hasAside {
+        flex-direction: row;
+        .sui-layout {
+            flex-direction: column;
+        }
+    }
+    &-content {
+        flex-grow: 1;
+        border: 1px solid $main-color
+    }
+    & & {
+        flex-grow: 1;
+        flex-direction: row;
+    }
+}

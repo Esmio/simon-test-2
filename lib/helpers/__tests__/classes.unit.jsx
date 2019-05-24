@@ -1,4 +1,4 @@
-import classes from '../classes';
+import classes, { scopedClassMaker } from '../classes';
 
 describe('测试classes', () => {
     it('接受 1 个 className', () => {
@@ -22,5 +22,16 @@ describe('测试classes', () => {
     it('接受 0 个参数', () => {
         const result = classes();
         expect(result).toEqual('');
+    })
+})
+
+describe('scopedClassMaker', () => {
+    it('接受字符串或对象', () => {
+        const sc = scopedClassMaker('sui-layout');
+        expect(sc('')).toEqual('sui-layout');
+        expect(sc('x')).toEqual('sui-layout-x');
+        expect(sc({y: true, z: false})).toEqual('sui-layout-y');
+        expect(sc({y: true, z: true})).toEqual('sui-layout-y sui-layout-z');
+        expect(sc({y: true, z: true}, {extra: 'red'})).toEqual('sui-layout-y sui-layout-z red');
     })
 })
