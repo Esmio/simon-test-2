@@ -7,6 +7,12 @@ a {text-decoration: none;}
 $padding: 16px;
 $main-color: #fec14b;
 $border-color: #eee;
+body {
+    font-size: 16px;
+}
+pre {
+    font-family: 'fira code medium', Consolas, monospace;
+}
 .site-page {
     background-color: #fff;
 }
@@ -37,12 +43,19 @@ $border-color: #eee;
         font-size: 18px;
     }
     ul {
-        padding: 0 $padding;
         min-width: 12em;
         > li {
-            padding: 8px 0;
             a {
-                color: $main-color;
+                display: block;
+                padding: 8px $padding;
+                color: #333;
+                &:hover {
+                    color: $main-color;
+                }
+                &.active {
+                    background: desaturate($main-color, 20%);
+                    color: #fff;
+                }
             }
         }
     }
@@ -54,4 +67,8 @@ $border-color: #eee;
     color: #666;
     padding: 16px 0;
     border-top: 1px solid $border-color;
+}
+
+.example {
+    padding: 16px 0;
 }
