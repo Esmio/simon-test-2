@@ -5,17 +5,21 @@ import IconExample from './lib/icon/icon.example';
 import ButtonExample from './lib/button.example';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
+import { Layout, Header, Aside, Content, Footer } from './lib/layout/layout';
+import './example.scss';
+const logo = require('./logo.png');
 
 ReactDOM.render(
     <Router>
-        <div>
-            <header>
+        <Layout className="site-page">
+            <Header className="site-header">
                 <div className="logo">
-                    SUI
+                    <img src={logo} width="48" height="48" alt=""/>
+                    <span>SUI</span>
                 </div>
-            </header>
-            <div>
-                <aside>
+            </Header>
+            <Layout>
+                <Aside className="site-aside">
                     <h2>组件</h2>
                     <ul>
                         <li>
@@ -31,14 +35,17 @@ ReactDOM.render(
                             <Link to="/layout">Layout</Link>
                         </li>
                     </ul>
-                </aside>
-                <main>
+                </Aside>
+                <Content className="site-main">
                     <Route path="/icon" component={IconExample} />
                     <Route path="/button" component={ButtonExample} />
                     <Route path="/dialog" component={DialogExample} />
                     <Route path="/layout" component={LayoutExample} />
-                </main>
-            </div>
-        </div>
+                </Content>
+            </Layout>
+            <Footer className="site-footer">
+                &copy; Simon Dong
+            </Footer>
+        </Layout>
     </Router>
-, document.querySelector('#root'));
+    , document.querySelector('#root'));
