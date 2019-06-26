@@ -6,6 +6,7 @@ import ButtonExample from './lib/button.example';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
 import { Layout, Header, Aside, Content, Footer } from './lib/layout/layout';
+import FormExample from './lib/form/form.example';
 import './example.scss';
 
 const x = require('!!raw-loader!./lib/icon/icon.example.tsx');
@@ -30,10 +31,13 @@ ReactDOM.render(
                             <NavLink to="/icon">Icon</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dialog">Dialog</NavLink>
+                            <NavLink to="/dialog">对话框</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/layout">Layout</NavLink>
+                            <NavLink to="/layout">布局</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/form">表单</NavLink>
                         </li>
                     </ul>
                 </Aside>
@@ -42,6 +46,7 @@ ReactDOM.render(
                     <Route path="/button" component={ButtonExample} />
                     <Route path="/dialog" component={DialogExample} />
                     <Route path="/layout" component={LayoutExample} />
+                    <Route path="/form" component={FormExample} />
                 </Content>
             </Layout>
             <Footer className="site-footer">
