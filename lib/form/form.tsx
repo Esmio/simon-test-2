@@ -15,6 +15,7 @@ interface Props {
     onChange: (value: FormValue) => void;
     errors: { [K: string]: string[] };
     errorsDisplayMode?: 'first' | 'all';
+    transformError?: (message: string) => string;
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
@@ -24,9 +25,16 @@ const Form: React.FunctionComponent<Props> = (props) => {
         props.onSubmit(e);
     }
     const onInputChange = (name: string, e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(name, e.target.value)
         const newFormValue = { ...formData, [name]: e.target.value }
         props.onChange(newFormValue)
+    }
+    const transformError = (message: string) => {
+        const map: any = {
+            required: '必填',
+            minLength: '太短',
+            maxLength: '太长',
+        };
+        return props.transformError && props.transformError(message) || map[message] || '未知错误';
     }
     return (
         <form onSubmit={onSubmit}>
@@ -47,9 +55,9 @@ const Form: React.FunctionComponent<Props> = (props) => {
                             <div className="sui-form-error">
                                 {
                                     props.errors[f.name] ?
-                                    props.errorsDisplayMode === 'first' ?
-                                    props.errors[f.name][0] :
-                                    props.errors[f.name].join('，') :
+                                    (props.errorsDisplayMode === 'first' ?
+                                    transformError!(props.errors[f.name][0]) :
+                                    props.errors[f.name].map(transformError!).join('，')) :
                                     <span>&nbsp;</span>
 
                                 }
@@ -70,7 +78,15 @@ const Form: React.FunctionComponent<Props> = (props) => {
 }
 
 Form.defaultProps = {
-    errorsDisplayMode: 'first'
+    errorsDisplayMode: 'first',
+    transformError: (message: string) => {
+        const map: any = {
+            required: '必填',
+            minLength: '太短',
+            maxLength: '太长',
+        };
+        return map[message] || '未知错误';
+    }
 }
 
 export default Form;

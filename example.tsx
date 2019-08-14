@@ -9,8 +9,7 @@ import { Layout, Header, Aside, Content, Footer } from './lib/layout/layout';
 import FormExample from './lib/form/form.example';
 import './example.scss';
 
-const x = require('!!raw-loader!./lib/icon/icon.example.tsx');
-console.log(x.default)
+// const x = require('!!raw-loader!./lib/icon/icon.example.tsx');
 
 const logo = require('./logo.png');
 
