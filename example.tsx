@@ -7,6 +7,7 @@ import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
 import { Layout, Header, Aside, Content, Footer } from './lib/layout/layout';
 import FormExample from './lib/form/form.example';
+import ScrollExample from './lib/scroll/scroll.example';
 import './example.scss';
 
 // const x = require('!!raw-loader!./lib/icon/icon.example.tsx');
@@ -38,6 +39,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/form">表单</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/scroll">滚动条</NavLink>
+                        </li>
                     </ul>
                 </Aside>
                 <Content className="site-main">
@@ -46,6 +50,7 @@ ReactDOM.render(
                     <Route path="/dialog" component={DialogExample} />
                     <Route path="/layout" component={LayoutExample} />
                     <Route path="/form" component={FormExample} />
+                    <Route path="/scroll" component={ScrollExample} />
                 </Content>
             </Layout>
             <Footer className="site-footer">
